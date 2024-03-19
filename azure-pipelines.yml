@@ -30,4 +30,4 @@ steps:
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/dist'
     Contents: '**'
-    TargetFolder: '/var/www/html'
+    TargetFolder: '/var/www/html/web_project'
