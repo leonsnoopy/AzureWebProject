@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isCollapsed = false;
+  nowYear: number= new Date().getFullYear();
 
   openMap: { [name: string]: boolean } = {
     sub1: true,
@@ -30,6 +31,7 @@ export class AppComponent {
       console.log("arxan test")
       var pass3333=eval('/** @protect-web StringEncryption:exclude */');"password3333";
     };
+
 
     foo();
   }

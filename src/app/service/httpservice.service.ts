@@ -15,6 +15,16 @@ export class HttpserviceService {
   post(url:string, body:any, options?:any){
     return this.http.post(url,body,options);
   }
+
+  sendLineNotifyApi(msg:string) {
+    console.log(msg);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'https://arxan.gss.com.tw/api/arxan_detected', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      message: msg
+    }));
+  }
   
   
 }
