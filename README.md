@@ -1,6 +1,6 @@
 
 
-# ArxanProject 建置環境
+# Web Project 建置環境
   node v16 
   angular 12.2.12
 
@@ -10,7 +10,7 @@
 # Build
   npm run build
 
-# ArxanProject
+# Web Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
