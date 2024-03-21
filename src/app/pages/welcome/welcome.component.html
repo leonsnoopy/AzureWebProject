@@ -1,5 +1,11 @@
 <h1>圖書資訊</h1>
 
+<input nz-input placeholder="title" [(ngModel)]="title"/>
+
+<button nz-button nzType="primary" (click)="addBooks()">新增書本資料</button>
+
+<button nz-button nzType="primary" (click)="deleteBooks()">刪除書本資料</button>
+
 <button nz-button nzType="primary" (click)="getBooks()">搜尋書本資料</button>
 
 <nz-table [nzData]="books">

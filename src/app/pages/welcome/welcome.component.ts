@@ -11,6 +11,7 @@ import { HttpserviceService } from '../../service/httpservice.service';
 export class WelcomeComponent implements OnInit {
 
   message: string = "";
+  title: string = "";
   books: any[] = [];
 
   constructor(private httpService: HttpserviceService, private http: HttpClient) { }
@@ -31,8 +32,45 @@ export class WelcomeComponent implements OnInit {
         },
         (error) => {
           console.error('Error fetching books:', error);
+          alert("瀏覽失敗")
         }
       );
+  }
+
+  addBooks() {
+    if (this.title.trim() == "") {
+      alert("不要空白")
+    } else {
+      this.http.get<any[]>('https://nodetestapi.azurewebsites.net/api/addbook?title=' + this.title)
+        .subscribe(
+          (response) => {
+            console.log('res:', response);
+          },
+          (error) => {
+            console.error('Error fetching books:', error);
+            alert("新增失敗")
+          }
+        );
+    }
+
+  }
+
+  deleteBooks() {
+    if (this.title.trim() == "") {
+      alert("不要空白")
+    } else {
+      this.http.get<any[]>('https://nodetestapi.azurewebsites.net/api/deletebook?title=' + this.title)
+        .subscribe(
+          (response) => {
+            console.log('res:', response);
+          },
+          (error) => {
+            console.error('Error fetching books:', error);
+            alert("刪除失敗")
+          }
+        );
+
+    }
 
   }
 }
