@@ -1,3 +1,20 @@
+<h1>圖書資訊</h1>
+
+<button nz-button nzType="primary" (click)="getBooks()">搜尋書本資料</button>
+
+<nz-table [nzData]="books">
+  <thead>
+    <tr>
+      <th nzWidth="50%">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.title }}</td>
+    </tr>
+  </tbody>
+</nz-table>
+
 <h1>點擊後發送 LineNotify</h1>
 
 <input nz-input placeholder="Message" [(ngModel)]="message"/>
